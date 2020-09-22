@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.6.2">
+<eagle version="9.5.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -25686,25 +25686,25 @@ W = angled&lt;p&gt;
 <part name="SW1" library="microbuilder" deviceset="SWITCH_TACT_SMT" device="4.6X2.8" value="KMR2"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="T2" library="MJE340" deviceset="MJE340" device=""/>
-<part name="R18" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="1K"/>
-<part name="R19" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="1K"/>
+<part name="R18" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="3.9K"/>
+<part name="R19" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="3.9K"/>
 <part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND14" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND15" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R20" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="1K"/>
 <part name="TUBE1" library="con-wago-500" library_urn="urn:adsk.eagle:library:195" deviceset="W237-102" device="" package3d_urn="urn:adsk.eagle:package:10688/1"/>
 <part name="T1" library="MJE340" deviceset="MJE340" device=""/>
-<part name="R21" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="1K"/>
-<part name="R22" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="1K"/>
+<part name="R21" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="3.9K"/>
+<part name="R22" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="3.9K"/>
 <part name="GND16" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND17" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND18" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R23" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="1K"/>
+<part name="R23" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="270R"/>
 <part name="TUBE2" library="con-wago-500" library_urn="urn:adsk.eagle:library:195" deviceset="W237-102" device="" package3d_urn="urn:adsk.eagle:package:10688/1"/>
-<part name="C16" library="microbuilder" deviceset="CAP_CERAMIC" device="0603_NO" value="22pF"/>
-<part name="C17" library="microbuilder" deviceset="CAP_CERAMIC" device="0603_NO" value="22pF"/>
-<part name="C18" library="microbuilder" deviceset="CAP_CERAMIC" device="0603_NO" value="22pF"/>
-<part name="C19" library="microbuilder" deviceset="CAP_CERAMIC" device="0603_NO" value="22pF"/>
+<part name="C16" library="microbuilder" deviceset="CAP_CERAMIC" device="0603_NO" value="47uF"/>
+<part name="C17" library="microbuilder" deviceset="CAP_CERAMIC" device="0603_NO" value="47uF"/>
+<part name="C18" library="microbuilder" deviceset="CAP_CERAMIC" device="0603_NO" value="47uF"/>
+<part name="C19" library="microbuilder" deviceset="CAP_CERAMIC" device="0603_NO" value="47uF"/>
 <part name="U5" library="MPU-6050" deviceset="MPU-6050" device=""/>
 <part name="C20" library="microbuilder" deviceset="CAP_CERAMIC" device="0603_NO" value="0.1uF"/>
 <part name="C21" library="microbuilder" deviceset="CAP_CERAMIC" device="0603_NO" value="2200pF"/>
@@ -25724,6 +25724,10 @@ W = angled&lt;p&gt;
 <part name="SJ2" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1"/>
 <part name="GND22" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SJ3" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1"/>
+<part name="CHG1" library="microbuilder" deviceset="LED" device="0805_NOOUTLINE" value="ORANGE"/>
+<part name="R26" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="1K"/>
+<part name="U$14" library="microbuilder" deviceset="3.3V" device=""/>
+<part name="GND23" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -26218,6 +26222,20 @@ W = angled&lt;p&gt;
 <attribute name="NAME" x="309.88" y="170.18" size="1.778" layer="95"/>
 <attribute name="VALUE" x="309.88" y="163.83" size="1.778" layer="96"/>
 </instance>
+<instance part="CHG1" gate="G$1" x="63.5" y="22.86" smashed="yes" rot="R270">
+<attribute name="NAME" x="67.945" y="24.13" size="1.27" layer="95" rot="R270" align="center"/>
+<attribute name="VALUE" x="60.706" y="24.13" size="1.27" layer="96" rot="R270" align="center"/>
+</instance>
+<instance part="R26" gate="G$1" x="63.5" y="35.56" smashed="yes" rot="R90">
+<attribute name="NAME" x="60.96" y="35.56" size="1.27" layer="95" font="vector" rot="R90" align="center"/>
+<attribute name="VALUE" x="66.04" y="35.56" size="1.016" layer="96" font="vector" ratio="15" rot="R90" align="center"/>
+</instance>
+<instance part="U$14" gate="G$1" x="63.5" y="45.72" smashed="yes">
+<attribute name="VALUE" x="61.976" y="46.736" size="1.27" layer="96"/>
+</instance>
+<instance part="GND23" gate="1" x="63.5" y="12.7" smashed="yes">
+<attribute name="VALUE" x="60.96" y="10.16" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -26458,6 +26476,11 @@ W = angled&lt;p&gt;
 <pinref part="GND22" gate="1" pin="GND"/>
 <wire x1="287.02" y1="170.18" x2="287.02" y2="167.64" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="CHG1" gate="G$1" pin="C"/>
+<pinref part="GND23" gate="1" pin="GND"/>
+<wire x1="63.5" y1="20.32" x2="63.5" y2="15.24" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="VBUS" class="0">
 <segment>
@@ -26636,6 +26659,11 @@ W = angled&lt;p&gt;
 <pinref part="SV2" gate="G$1" pin="3"/>
 <wire x1="243.84" y1="12.7" x2="248.92" y2="12.7" width="0.1524" layer="91"/>
 <label x="246.38" y="12.7" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R26" gate="G$1" pin="2"/>
+<pinref part="U$14" gate="G$1" pin="3.3V"/>
+<wire x1="63.5" y1="40.64" x2="63.5" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RESET" class="0">
@@ -27209,6 +27237,13 @@ W = angled&lt;p&gt;
 <pinref part="SJ3" gate="1" pin="1"/>
 <wire x1="307.34" y1="167.64" x2="292.1" y2="167.64" width="0.1524" layer="91"/>
 <label x="289.56" y="167.64" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$30" class="0">
+<segment>
+<pinref part="CHG1" gate="G$1" pin="A"/>
+<pinref part="R26" gate="G$1" pin="1"/>
+<wire x1="63.5" y1="27.94" x2="63.5" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
