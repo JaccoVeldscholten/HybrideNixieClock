@@ -1,47 +1,54 @@
 #include <Arduino.h>
-#include "TimeHandler.h"
-#include "WiFiManager.h"
-#include "NixieDriver.h"
 #include "MPU6050.h"
+#include "WiFiHandler.h"
+#include "TimeHandler.h"
 
-#define LEFTTUBEPIN 10
-#define RIGHTTUBEPIN 10
-
-TimeHandler _TimeHandler;
-WiFiManager _WifiManager;
-NixieDriver _clockTubes;
-
-MPU6050 _gyro;
+MPU6050 gyro;
+WifiHandler wifiHandler;
+TimeHandler timeHandler;
 
 void setup(){
   Serial.begin(9600);
-  _TimeHandler.Init();
-  _WifiManager.Init();
-  _clockTubes.Init(LEFTTUBEPIN,RIGHTTUBEPIN);
-
+  gyro.Init();
+  wifiHandler.Init();
+  timeHandler.Init();
+  
 }
 
 void loop(){
-  switch (_gyro.getMode()){
+  timeHandler.UpdateTime();
+
+  //Serial.print("De tijd is:");
+  //Serial.println(timeHandler.GetTime());
+
+  
+  switch( gyro.getMode()){
     case 0:
-      Serial.println("TimeMode");
-      _clockTubes.SetValue(0);
+      //Serial.println("Mode Time");
       break;
     case 1:
-      Serial.println("thermometerMode");
-      _clockTubes.SetValue(1);
+     // Serial.println("Mode TempMode");
       break;
     case 2:
-      Serial.println("timerMode");
-      _clockTubes.SetValue(2);
+     // Serial.println("Equalizer Mode ");
       break;
     case 3:
-      Serial.println("equalizerMode");
-      _clockTubes.SetValue(3);
+     // Serial.println("Hourglass Mode");
       break;
-    case 4:
-      Serial.println("Idle mode");
-      _clockTubes.SetValue(5);
+    default: 
+     // Serial.println("Idle");
+     break;
   }
-  delay(1000);
+
+/*
+  Serial.print("AcX = "); Serial.print(gyro.AcX);
+  Serial.print(" | AcY = "); Serial.print(gyro.AcY);
+  Serial.print(" | AcZ = "); Serial.print(gyro.AcZ);
+  Serial.print(" | Tmp = "); Serial.print(gyro.Tmp/340.00+36.53);  //equation for temperature in degrees C from datasheet
+  Serial.print(" | GyX = "); Serial.print(gyro.GyX);
+  Serial.print(" | GyY = "); Serial.print(gyro.GyY);
+  Serial.print(" | GyZ = "); Serial.println(gyro.GyZ);
+
+*/
+  wifiHandler.BrowserHandler();
 }

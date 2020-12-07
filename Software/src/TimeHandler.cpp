@@ -4,10 +4,12 @@ WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "pool.ntp.org", utcOffsetInSeconds);
 
 void TimeHandler::Init(){
-	Serial.println("Test");
+	UpdateTime();
+	timeClient.begin();
 }
 
 void TimeHandler::UpdateTime(){
+	timeClient.update();
 	timeString = timeClient.getFormattedTime();
 	hours = timeClient.getHours();
 	minutes = timeClient.getMinutes();
