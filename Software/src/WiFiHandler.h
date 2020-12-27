@@ -9,7 +9,7 @@
 #include <WiFiManager.h>
 #include <WiFiClient.h>
 
-#include "WebPage.h"           // Website
+#include "Website.h"
 
 class WifiHandler {
   

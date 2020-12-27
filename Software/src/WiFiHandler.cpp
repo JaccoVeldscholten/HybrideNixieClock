@@ -3,9 +3,9 @@
 ESP8266WebServer server(80);        //Server on port 80
 
 
+
 void HandleRoot() {
-    String s = MAIN_page;                  //Read HTML contents
-    server.send(200, "text/html", s);      //Send web page
+    server.send(200, "text/html", MAIN_page);      //Send web page
 }
 
 void WifiHandler::Init(){
